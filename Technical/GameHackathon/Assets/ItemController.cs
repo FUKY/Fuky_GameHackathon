@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ItemController : MonoBehaviour {
+public class ItemController : MonoSingleton<ItemController> {
 
     public Transform spawnLeft;
     public Transform spawnRight;

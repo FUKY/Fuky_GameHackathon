@@ -11,15 +11,21 @@ public class EnviromentController : MonoSingleton<EnviromentController> {
     public Sprite[] images;
     private Dictionary<EnviromentState, Sprite> dicEnviroment;
     public EnviromentState stateCurrent;
-
-    public void Start()
+    public EnviromentController()
     {
-        SetData();
+        //SetData();
         stateCurrent = EnviromentState.SUNNY;
     }
+    //public void Start()
+    //{
+    //    SetData();
+    //    stateCurrent = EnviromentState.SUNNY;
+    //}
 
     public void SetData()
     {
+        Debug.Log("da chay" + images.Length);
+        
         dicEnviroment = new Dictionary<EnviromentState, Sprite>();
         dicEnviroment.Add(EnviromentState.CLOUDY, images[0]);
         dicEnviroment.Add(EnviromentState.SUNNY, images[1]);
@@ -35,7 +41,7 @@ public class EnviromentController : MonoSingleton<EnviromentController> {
                 {
                     temparature = -0.2f;
                     speedEnviroment = 0.2f;
-                    spawner = 0.3f;
+                    spawner = 0.05f;
                     break;
                 }
             case EnviromentState.CLOUDY:
@@ -49,7 +55,7 @@ public class EnviromentController : MonoSingleton<EnviromentController> {
                 {
                     temparature = 0.0f;
                     speedEnviroment = 0.2f;
-                    spawner = -0.2f;
+                    spawner = -0.03f;
                     break;
                 }
         }
@@ -57,7 +63,7 @@ public class EnviromentController : MonoSingleton<EnviromentController> {
 
     public void RandomState()
     {
-        int index = Random.Range(0, 2);
+        int index = Random.Range(4, 400) % 3;
         switch(index)
         {
             case 0:
