@@ -22,4 +22,9 @@ public class Itemscrips : MonoBehaviour {
         }
 	}
 
+    public void Percent(float temp)
+    {
+        speedMove += speedMove * temp;
+    }
+
 }
