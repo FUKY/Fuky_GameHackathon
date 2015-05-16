@@ -34,8 +34,13 @@ public class GameController : MonoSingleton<GameController> {
         score = 0;
     }
 
+
     public float timeDelay = 0f;
 	void Update () {
+        if (player.GetComponent<PlayerController>().isDie)
+        {
+            return;
+        }
         slideOfTree.value = TreeScripts.Instance.waterCurrent;
         slideOfWell.value = player.GetComponent<PlayerController>().HPPlayer;
         systemState.Update();    

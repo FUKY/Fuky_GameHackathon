@@ -36,6 +36,14 @@ public class TreeScripts : MonoSingleton<TreeScripts> {
             ChangeFloor();
             GameController.Instance.UpdateScore(100);
         }
+
+        if(floor > 5)
+        {
+            floor = 1;
+            ChangeFloor();
+            GameController.Instance.UpdateScore(200);
+            waterCurrent = 0;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

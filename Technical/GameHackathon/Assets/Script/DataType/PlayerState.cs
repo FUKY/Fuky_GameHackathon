@@ -124,7 +124,7 @@ public class PlayerDieState : PlayerState
         if (playerController.passive == true) 
         {
             player.SetActive(false);
-
+            playerController.isDie = true;
         }
     }
 

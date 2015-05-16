@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public bool back;
 
     public bool passive;
+    public bool isDie;
     //public float usingItemTime;
     public bool usingItemTime;
     public bool usingItemShield;
