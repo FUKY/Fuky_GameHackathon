@@ -40,21 +40,21 @@ public class EnviromentController : MonoSingleton<EnviromentController> {
             case EnviromentState.SUNNY:
                 {
                     temparature = -0.2f;
-                    speedEnviroment = 0.2f;
-                    spawner = 0.05f;
+                    speedEnviroment = 1.2f;
+                    spawner = 0f;
                     break;
                 }
             case EnviromentState.CLOUDY:
                 {
                     temparature = -0.0f;
-                    speedEnviroment = 0.0f;
-                    spawner = 0.0f;
+                    speedEnviroment = 0f;
+                    spawner = 0.5f;
                     break;
                 }
             case EnviromentState.WINDY:
                 {
                     temparature = 0.0f;
-                    speedEnviroment = 0.2f;
+                    speedEnviroment = -0.9f;
                     spawner = -0.03f;
                     break;
                 }

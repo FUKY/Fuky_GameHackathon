@@ -38,6 +38,7 @@ public class ItemController : MonoSingleton<ItemController> {
         int itemID = listItemID[index];
         GameObject item = PoolManager.Instance.GetItem(itemID);
         item.GetComponent<Itemscrips>().Percent(temp);
+        item.GetComponent<Itemscrips>().Reset();
         item.SetActive(true);
         item.transform.position = positionItem;
         item.transform.SetParent(spawnLeft);

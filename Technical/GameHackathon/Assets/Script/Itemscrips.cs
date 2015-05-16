@@ -9,13 +9,18 @@ public class Itemscrips : MonoBehaviour {
     public EItemState itemCurr;
 
     // vận tốc di chuyển của item
+    private float speed;
     public float speedMove = 0.0f;
 	
+    void Start()
+    {
+        speed = speedMove;
+    }
 	// Update is called once per frame
 	void Update () {
         Vector3 newPos = transform.position;
 
-        newPos.y += Time.deltaTime *-speedMove;
+        newPos.y += Time.deltaTime * -speed;
 
         transform.position = newPos;
 
@@ -27,9 +32,12 @@ public class Itemscrips : MonoBehaviour {
 
     public void Percent(float temp)
     {
-        speedMove += speedMove * temp;
+        speed += speed * temp;
     }
 
-    
+    public void Reset()
+    {
+        speed = speedMove;
+    }
 
 }

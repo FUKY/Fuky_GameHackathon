@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     public bool usingItemHPWater;
     public float timeUsingShield;
     public float timeUsingTime;
+    public float timeExistShield =2f;
+    public float timeExistTime = 2f;
 
     void Start()
     {
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour {
     {
         if(usingItemTime)
         {
-            if((timeUsingTime += Time.deltaTime) > 2f)
+            if((timeUsingTime += Time.deltaTime) > timeExistTime)
             {
                 usingItemTime = false;
             }
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour {
 
         if (usingItemShield)
         {
-            if ((timeUsingShield += Time.deltaTime) > 2f)
+            if ((timeUsingShield += Time.deltaTime) > timeExistShield)
             {
                 usingItemShield = false;
             }
@@ -77,7 +79,6 @@ public class PlayerController : MonoBehaviour {
             GameObject gameObj = col.gameObject;
             Itemscrips itemscript = gameObj.GetComponent<Itemscrips>();
             float temp = itemscript.decreaseHP;
-            HPPlayer -= temp;
             touchItem = true;
             switch (itemscript.itemCurr)
             {
@@ -94,11 +95,14 @@ public class PlayerController : MonoBehaviour {
                 case EItemState.TIME:
                     {
                         usingItemTime = true;
+                        timeUsingTime = 0f;
                         break;
                     }
                 case EItemState.SHIELD:
                     {
+                        
                         usingItemShield = true;
+                        timeUsingShield = 0f;
                         break;
                     }
                 case EItemState.HPWATER:
