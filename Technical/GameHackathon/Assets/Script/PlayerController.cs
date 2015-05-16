@@ -3,16 +3,24 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
     public float playerSpeed;
+    public float HPPlayer = 1f;
     
     float xScale;
+
     public bool touchHell;
+    public bool touchTree;
+    public bool touchItem;
 
     public bool back;
+
+    public bool passive;
+
 
     void Start()
     {
         xScale = transform.localScale.x;
     }
+
 
     public void TurnBack()
     {
@@ -32,11 +40,33 @@ public class PlayerController : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Hell") 
+        if (col.tag == "Hell")
         {
-            touchHell = true;            
-        }
+            touchHell = true;
+            //HPPlayer = 1f;
 
+
+        }
+        if (col.tag == "Item")
+        {
+            GameObject gameObj = col.gameObject;
+            float temp = gameObj.GetComponent<Itemscrips>().decreaseHP;
+            HPPlayer -= temp;
+            touchItem = true;
+        }
+        if (col.tag == "Tree")
+        {
+
+            touchTree = true;
+            TreeScripts.Instance.UpdateWaterOfTree(HPPlayer);
+            //HPPlayer = 0f;
+
+        }
+    }
+
+    public void PassivePlayer()
+    {
+        passive = true;
     }
 
 

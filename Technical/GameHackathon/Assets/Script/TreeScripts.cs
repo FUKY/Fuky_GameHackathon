@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TreeScripts : MonoBehaviour {
+public class TreeScripts : MonoSingleton<TreeScripts> {
 
     // animator
     Animator anim;
 
     // Lượng nước hiện tại của Cây
     public float waterCurrent = 0.0f;
+    private int floor = 1;
 
 	// Use this for initialization
 	void Start () {  
@@ -15,12 +16,13 @@ public class TreeScripts : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if (waterCurrent >= 1)
-        {
-            Debug.Log("You Win !!");
-        }
-	}
+    //void UpdateWater(float water) {
+    //    if (waterCurrent >= (1 * 0.2f))
+    //    {
+    //        floor++;
+    //        ChangeFloor();
+    //    }
+    //}
 
     public void UpdateWaterOfTree(float water)
     {
@@ -28,14 +30,51 @@ public class TreeScripts : MonoBehaviour {
         float waterOfPlayer = water * 0.2f;
 
         waterCurrent += waterOfPlayer;
+        if (waterCurrent >= (floor * 0.2f))
+        {
+            floor++;
+            ChangeFloor();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            UpdateWaterOfTree(Demo_Player.water);
-            Destroy(col.gameObject);
+            //UpdateWaterOfTree(Demo_Player.water);
+            //Destroy(col.gameObject);
+        }
+    }
+
+    public  void ChangeFloor()
+    {
+        switch(floor)
+        {
+            case 1:
+                {
+                    anim.SetTrigger("level1");
+                    break;
+                }
+            case 2:
+                {
+                    anim.SetTrigger("level2");
+                    break;
+                }
+            case 3:
+                {
+                    anim.SetTrigger("level3");
+                    break;
+                }
+            case 4:
+                {
+                    anim.SetTrigger("level4");
+                    break;
+                }
+            case 5:
+                {
+                    anim.SetTrigger("level5");
+                    break;
+                }
         }
     }
 

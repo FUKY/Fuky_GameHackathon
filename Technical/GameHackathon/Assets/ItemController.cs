@@ -34,7 +34,7 @@ public class ItemController : MonoSingleton<ItemController> {
         float positionX = Random.Range(spawnLeft.position.x, spawnRight.position.x);
         Vector3 positionItem = new Vector3(positionX, spawnRight.position.y, spawnRight.position.z);
         int index = Random.Range(0, listItemID.Count - 1);
-        Debug.Log(listItemID.Count);
+        //Debug.Log(listItemID.Count);
         int itemID = listItemID[index];
         GameObject item = PoolManager.Instance.GetItem(itemID);
         item.GetComponent<Itemscrips>().Percent(temp);

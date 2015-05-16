@@ -10,7 +10,7 @@ public class GameController : MonoSingleton<GameController> {
     
 	void Start () {
         systemState.Init();
-        systemState.ChangeState(EPlayerState.MOVE);
+        //systemState.ChangeState(EPlayerState.MOVE);
         
         GameReset();
 	}
@@ -22,6 +22,7 @@ public class GameController : MonoSingleton<GameController> {
     [ContextMenu("Background")]
     public void GameReset()
     {
+        systemState.ChangeState(EPlayerState.MOVE);
         EnviromentController.Instance.SetData();
         EnviromentController.Instance.RandomState();
         backGround.GetComponent<SpriteRenderer>().sprite = EnviromentController.Instance.imageCurrent;

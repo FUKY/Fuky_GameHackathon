@@ -24,7 +24,7 @@ public class EnviromentController : MonoSingleton<EnviromentController> {
 
     public void SetData()
     {
-        Debug.Log("da chay" + images.Length);
+        //Debug.Log("da chay" + images.Length);
         
         dicEnviroment = new Dictionary<EnviromentState, Sprite>();
         dicEnviroment.Add(EnviromentState.CLOUDY, images[0]);

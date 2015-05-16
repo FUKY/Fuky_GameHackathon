@@ -4,6 +4,7 @@ using System.Collections;
 public class Itemscrips : MonoBehaviour {
 
     public int idOfItem = 0;
+    public float decreaseHP = 0.1f;
 
     // vận tốc di chuyển của item
     public float speedMove = 0.0f;
@@ -26,5 +27,7 @@ public class Itemscrips : MonoBehaviour {
     {
         speedMove += speedMove * temp;
     }
+
+    
 
 }
