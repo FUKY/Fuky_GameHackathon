@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: cd5256e788b408d4086b40002771270b
+timeCreated: 1431812412
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Player_nongdan_0
+    21300002: Player_nongdan_1
+    21300004: Player_nongdan_2
+    21300006: Player_nongdan_4
+    21300008: Player_nongdan_5
+    21300010: Player_nongdan_6
+    21300012: Player_nongdan_7
+    21300014: Player_nongdan_8
+    21300016: Player_nongdan_9
+    21300018: Player_nongdan_3
+    21300020: Player_nongdan_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Player_nongdan_0
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 441
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_1
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 473
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_2
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 455
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_4
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 44
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_5
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 44
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 408
+        width: 195
+        height: 372
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_7
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 409
+        width: 195
+        height: 357
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_8
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 408
+        width: 248
+        height: 353
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 8
+        width: 195
+        height: 361
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_3
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 11
+        width: 248
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Player_nongdan_10
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 8
+        width: 195
+        height: 361
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
