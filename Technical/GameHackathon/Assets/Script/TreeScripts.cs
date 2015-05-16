@@ -34,6 +34,7 @@ public class TreeScripts : MonoSingleton<TreeScripts> {
         {
             floor++;
             ChangeFloor();
+            GameController.Instance.UpdateScore(100);
         }
     }
 
