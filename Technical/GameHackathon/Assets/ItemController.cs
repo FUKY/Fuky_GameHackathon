@@ -7,6 +7,7 @@ public class ItemController : MonoSingleton<ItemController> {
     public Transform spawnLeft;
     public Transform spawnRight;
     private List<int> listItemID;
+    public int lineCount = 5;
     public void Start()
     {
         //listItemID = PoolManager.Instance.ListItemID;
@@ -31,7 +32,10 @@ public class ItemController : MonoSingleton<ItemController> {
     public void Spawn(float temp)
     {
         listItemID = PoolManager.Instance.ListItemID;
+        float space = spawnRight.position.x - spawnLeft.position.x;
+        float spaceItem = space / lineCount;
         float positionX = Random.Range(spawnLeft.position.x, spawnRight.position.x);
+        positionX = (positionX / spaceItem) * spaceItem;
         Vector3 positionItem = new Vector3(positionX, spawnRight.position.y, spawnRight.position.z);
         int index = Random.Range(0, listItemID.Count - 1);
         //Debug.Log(listItemID.Count);

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoSingleton<GameController> {
 
     public GameObject player;
     public GameObject backGround;
     public int score;
+    public Text txtScore;
     public FSSystemState systemState = new FSSystemState();
     
 	void Start () {
@@ -13,6 +15,7 @@ public class GameController : MonoSingleton<GameController> {
         //systemState.ChangeState(EPlayerState.MOVE);
         
         GameReset();
+        this.UpdateScore(0);
 	}
 	
     public void GameInit()
@@ -47,4 +50,10 @@ public class GameController : MonoSingleton<GameController> {
             
         }
 	}
+
+    public void UpdateScore(int score)
+    {
+        this.score += score;
+        txtScore.text = "SCORE: " +  this.score.ToString();
+    }
 }
