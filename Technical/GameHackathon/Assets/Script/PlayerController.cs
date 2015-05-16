@@ -14,7 +14,12 @@ public class PlayerController : MonoBehaviour {
     public bool back;
 
     public bool passive;
-
+    //public float usingItemTime;
+    public bool usingItemTime;
+    public bool usingItemShield;
+    public bool usingItemHPWater;
+    public float timeUsingShield;
+    public float timeUsingTime;
 
     void Start()
     {
@@ -38,6 +43,26 @@ public class PlayerController : MonoBehaviour {
         xScale *= -1;
         transform.localScale = new Vector3(xScale, transform.localScale.y, 0f);
     }
+
+    void Update()
+    {
+        if(usingItemTime)
+        {
+            if((timeUsingTime += Time.deltaTime) > 2f)
+            {
+                usingItemTime = false;
+            }
+        }
+
+        if (usingItemShield)
+        {
+            if ((timeUsingShield += Time.deltaTime) > 2f)
+            {
+                usingItemShield = false;
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Hell")
@@ -50,9 +75,39 @@ public class PlayerController : MonoBehaviour {
         if (col.tag == "Item")
         {
             GameObject gameObj = col.gameObject;
-            float temp = gameObj.GetComponent<Itemscrips>().decreaseHP;
+            Itemscrips itemscript = gameObj.GetComponent<Itemscrips>();
+            float temp = itemscript.decreaseHP;
             HPPlayer -= temp;
             touchItem = true;
+            switch (itemscript.itemCurr)
+            {
+                case EItemState.ITEM1:                             
+                case EItemState.ITEM2:
+                case EItemState.ITEM3:
+                    {
+                        if (!usingItemShield)
+                        {
+                            HPPlayer -= temp;
+                        }
+                        break;
+                    }
+                case EItemState.TIME:
+                    {
+                        usingItemTime = true;
+                        break;
+                    }
+                case EItemState.SHIELD:
+                    {
+                        usingItemShield = true;
+                        break;
+                    }
+                case EItemState.HPWATER:
+                    {
+                        usingItemHPWater = true;
+                        HPPlayer += temp;
+                        break;
+                    }
+            }
         }
         if (col.tag == "Tree")
         {

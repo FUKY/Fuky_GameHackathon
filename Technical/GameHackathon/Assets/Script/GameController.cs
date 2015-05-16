@@ -35,7 +35,16 @@ public class GameController : MonoSingleton<GameController> {
         if((timeDelay += Time.deltaTime) >= 1.0f)
         {
             timeDelay = 0f;
-            ItemController.Instance.Spawn(EnviromentController.Instance.spawner);
+            if(player.GetComponent<PlayerController>().usingItemTime)
+            {
+                player.GetComponent<PlayerController>().usingItemTime = false;
+                ItemController.Instance.Spawn(EnviromentController.Instance.spawner - EnviromentController.Instance.spawner * 0.5f);
+            }
+            else
+            {
+                ItemController.Instance.Spawn(EnviromentController.Instance.spawner);
+            }
+            
         }
 	}
 }

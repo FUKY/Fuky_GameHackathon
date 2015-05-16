@@ -6,6 +6,8 @@ public class Itemscrips : MonoBehaviour {
     public int idOfItem = 0;
     public float decreaseHP = 0.1f;
 
+    public EItemState itemCurr;
+
     // vận tốc di chuyển của item
     public float speedMove = 0.0f;
 	

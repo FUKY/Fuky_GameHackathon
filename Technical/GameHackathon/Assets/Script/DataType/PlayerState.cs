@@ -31,7 +31,6 @@ public class PlayerMoveState : PlayerState
     public override void Do()
     {
         rb2dPlayer.velocity = new Vector2(playerController.playerSpeed, 0f);
-
     }
 
     public override void Change()
