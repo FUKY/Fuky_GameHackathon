@@ -18,31 +18,46 @@ public class PlayerState
 
 public class PlayerMoveState : PlayerState
 {
-    float speed = 10;
+    
     GameObject player = GameController.Instance.player;
     PlayerController playerController = GameController.Instance.player.GetComponent<PlayerController>();
     Animator animatorPlayer = GameController.Instance.player.GetComponent<Animator>();
+    Rigidbody2D rb2dPlayer = GameController.Instance.player.GetComponent<Rigidbody2D>();
+
+    float xScale = GameController.Instance.player.transform.localScale.x;
+    
+
     public override void Do()
     {
+        
+        rb2dPlayer.velocity = new Vector2(playerController.playerSpeed, 0f);        
     }
 
     public override void Change()
     {
-        
+        //if (player.transform.position.x >= 2f) 
+        //{
+        //    GameController.Instance.systemState.ChangeState(EPlayerState.WATER);
+        //}
     }
+
+  
 
 }
 
 public class PlayerWaterState : PlayerState
 {
+    Animator animatorPlayer = GameController.Instance.player.GetComponent<Animator>();
+    PlayerController playerController = GameController.Instance.player.GetComponent<PlayerController>();
     public override void Do()
     {
-        
+        //animatorPlayer.SetTrigger("waterPlayer");
+        //playerController.playerSpeed = 0f;
     }
 
     public override void Change()
     {
-
+        //GameController.Instance.systemState.ChangeState(EPlayerState.MOVE);
     }
 }
 
