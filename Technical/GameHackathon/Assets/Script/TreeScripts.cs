@@ -46,6 +46,17 @@ public class TreeScripts : MonoSingleton<TreeScripts> {
         }
     }
 
+    // hàm chuyển giao diện khi thắng game
+    public void ChangeFloorTheWin(bool isChange)
+    {
+        if (isChange)
+        {
+            anim.SetTrigger("theWin");
+        }
+    }
+
+
+
     public  void ChangeFloor()
     {
         switch(floor)
@@ -95,11 +106,17 @@ public class TreeScripts : MonoSingleton<TreeScripts> {
     {
         anim.SetTrigger("stand4");
     }
-    public void SetAnimationStand5()
+
+
+    public void SetRestart()
     {
-        anim.SetTrigger("stand5");
+        anim.SetTrigger("restart");
     }
 
+    public void SetTheWin()
+    {
+        anim.SetTrigger("theWin");
+    }
     
 
 }
