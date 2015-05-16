@@ -6,6 +6,8 @@ public class GameController : MonoSingleton<GameController> {
 
     public GameObject player;
     public GameObject backGround;
+    public Slider slideOfTree;
+    public Slider slideOfWell;
     public int score;
     public Text txtScore;
     public FSSystemState systemState = new FSSystemState();
@@ -33,7 +35,9 @@ public class GameController : MonoSingleton<GameController> {
     }
 
     public float timeDelay = 0f;
-	void Update () {        
+	void Update () {
+        slideOfTree.value = TreeScripts.Instance.waterCurrent;
+        slideOfWell.value = player.GetComponent<PlayerController>().HPPlayer;
         systemState.Update();    
         if((timeDelay += Time.deltaTime) >= 1.0f)
         {
