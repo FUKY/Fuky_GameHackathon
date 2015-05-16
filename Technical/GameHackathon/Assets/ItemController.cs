@@ -41,6 +41,6 @@ public class ItemController : MonoBehaviour {
         item.SetActive(true);
         item.transform.position = positionItem;
         item.transform.SetParent(spawnLeft);
-        Debug.Log(item);
+
     }
 }
