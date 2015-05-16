@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class FSSystemState : MonoBehaviour {
+public class FSSystemState{
 
     public PlayerState stateCurrent;
     public Dictionary<EPlayerState, PlayerState> fsSystemState;
