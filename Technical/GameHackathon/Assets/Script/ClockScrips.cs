@@ -11,9 +11,14 @@ public class ClockScrips : MonoBehaviour {
 
     public int[] listKey;
 
+    // sprite của item
     private SpriteRenderer spriteOfItem;
 
+    //  rigibody của item
     public Rigidbody2D rigi;
+
+    // vận tốc rơi của item
+    public float gravity = 1.0f;
 
     void Awake()
     {
@@ -24,6 +29,9 @@ public class ClockScrips : MonoBehaviour {
         spriteOfItem.sprite = listSpriteItem[keyCurrent];
 
         rigi = gameObject.GetComponent<Rigidbody2D>();
+
+        rigi.gravityScale = rigi.gravityScale * gravity;
+
     }
 
     void Update()

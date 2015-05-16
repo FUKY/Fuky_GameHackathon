@@ -23,12 +23,10 @@ public class SpawnItem : MonoBehaviour {
     // item 
     public GameObject item;
 
-    
 
 	// Use this for initialization
 	void Start () {
         _startPosition = transform.position;
-        GetComponent<Rigidbody2D>();
 	}
 	
 
