@@ -65,4 +65,10 @@ public class GameController : MonoSingleton<GameController> {
         this.score += score;
         txtScore.text = "SCORE: " +  this.score.ToString();
     }
+
+    public void Restart()
+    {
+        Application.LoadLevel("MainGame");
+    }
+
 }
