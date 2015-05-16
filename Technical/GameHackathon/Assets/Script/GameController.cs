@@ -6,6 +6,7 @@ public class GameController : MonoSingleton<GameController> {
 
     public GameObject player;
     public GameObject backGround;
+    public GameObject loseGame;
     public Slider slideOfTree;
     public Slider slideOfWell;
     public int score;
@@ -39,6 +40,7 @@ public class GameController : MonoSingleton<GameController> {
 	void Update () {
         if (player.GetComponent<PlayerController>().isDie)
         {
+            loseGame.SetActive(true);
             return;
         }
         slideOfTree.value = TreeScripts.Instance.waterCurrent;
